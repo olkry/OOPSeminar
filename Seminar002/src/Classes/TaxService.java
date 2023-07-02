@@ -1,12 +1,17 @@
 package Classes;
 
 import Interfaces.iActorBehaviuor;
+import Interfaces.iReturnOrder;
 
 public class TaxService implements iActorBehaviuor{
       private String name;
       private boolean isTakeOrder;
       private boolean isMakeOrder;
+      private boolean isMakeReturn;
 
+      /**
+       * Класс инспектора.
+       */
       public TaxService() {
             this.name = "Tax audit";
       }
@@ -39,4 +44,7 @@ public class TaxService implements iActorBehaviuor{
       public Actor getActor() {
             return new OrdinaryClient(name);
       }
+
+      
+      
 }

@@ -3,6 +3,11 @@ package Classes;
 public class PensionerClient extends Actor {
       private int pensID;
 
+      /**
+       * Класс клиянта - пенсионера.
+       * @param name - Имя покупателя.
+       * @param pensID - Идинтификационный номер пенсионера.
+       */
       public PensionerClient(String name, int pensID) {
             super(name + " - пенсионер");
             this.pensID = pensID;

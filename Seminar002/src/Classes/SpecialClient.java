@@ -3,6 +3,11 @@ package Classes;
 public class SpecialClient extends Actor {
       private int idVip;
 
+      /**
+       * Класс вип - клиента
+       * @param name - Имя покупателя
+       * @param id - Уникальный индификационный номер вип - клиента
+       */
       public SpecialClient(String name, Integer id) {
             super(name);
             idVip = id;
@@ -33,12 +38,5 @@ public class SpecialClient extends Actor {
             return this;
       }
 
-      // @Override
-      // public String getName() {
-      // return name;
-      // }
 
-      // public int getIdVip() {
-      // return idVip;
-      // }
 }

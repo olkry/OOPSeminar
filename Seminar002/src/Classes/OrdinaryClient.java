@@ -1,9 +1,11 @@
 package Classes;
 
 public class OrdinaryClient extends Actor {
-      // private boolean setTakeOrder;
-      // private boolean setMakeOrder;
 
+      /**
+       * Класс обычного клиента, стандартного, зашедшего в магазин
+       * @param name - Имя покупателя
+       */
       public OrdinaryClient(String name) {
             super(name);
       }
@@ -33,24 +35,4 @@ public class OrdinaryClient extends Actor {
             return this;
       }
 
-      // public boolean isSetTakeOrder() {
-      // return setTakeOrder;
-      // }
-
-      // public void setSetTakeOrder(boolean setTakeOrder) {
-      // this.setTakeOrder = setTakeOrder;
-      // }
-
-      // public boolean isSetMakeOrder() {
-      // return setMakeOrder;
-      // }
-
-      // public void setSetMakeOrder(boolean setMakeOrder) {
-      // this.setMakeOrder = setMakeOrder;
-      // }
-
-      // @Override
-      // public String getName() {
-      // return name;
-      // }
 }

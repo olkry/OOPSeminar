@@ -6,11 +6,16 @@ import java.util.List;
 import Interfaces.iActorBehaviuor;
 import Interfaces.iMarketBehaviour;
 import Interfaces.iQueueBehaviour;
+import Interfaces.iReturnOrder;
 
-public class Market implements iMarketBehaviour, iQueueBehaviour {
-      
+public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
+
       private List<iActorBehaviuor> queue;
 
+      /**
+       * Создаёт магазин для наполнения его клиентами и методами для отслеживания их
+       * передвижения с отображением в консоли их статуса
+       */
       public Market() {
             this.queue = new ArrayList<iActorBehaviuor>();
       }
@@ -27,6 +32,19 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
             System.out.println(actor.getActor().getName() + " клиент добавлен в очередь ");
       }
 
+      // @Override
+      // public void acceptToReturn(iActorBehaviuor actor) {
+      //       System.out.println(actor.getActor().getName() + " клиент пришел в магазин для возврата товара ");
+      //       takeInReturn(actor);
+      // }
+
+      // @Override
+      // public void takeInReturn(iActorBehaviuor actor) {
+      //       this.queue.add(actor);
+      //       System.out.println(actor.getActor().getName() + " клиент добавлен в очередь возврата ");
+      //       // returnOrder();
+      // }
+
       @Override
       public void releaseFromMarket(List<Actor> actors) {
             for (Actor actor : actors) {
@@ -41,6 +59,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
             takeOrder();
             giveOrder();
             releaseFromQueue();
+            // returnOrder();
       }
 
       @Override
@@ -78,5 +97,31 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
             }
 
       }
+
+      @Override
+      public void acceptToReturn(iActorBehaviuor actor) {
+            System.out.println(actor.getActor().getName() + " клиент пришел в магазин для возврата товара ");
+            takeInReturn(actor);
+      }
+
+      @Override
+      public void takeInReturn(iActorBehaviuor actor) {
+            this.queue.add(actor);
+            System.out.println(actor.getActor().getName() + " клиент добавлен в очередь возврата ");
+            returnOrder();
+      }
+
+      @Override
+      public void returnOrder() {
+            List<Actor> actorsOut = new ArrayList<>();
+            for (iActorBehaviuor actor : queue) {
+                        actorsOut.add(actor.getActor());
+                        System.out.println(actor.getActor().getName() + " клиент вернул свой заказ ");
+            }
+            releaseFromMarket(actorsOut);
+      }
+      
+
+
 
 }
