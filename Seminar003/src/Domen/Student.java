@@ -4,6 +4,12 @@ public class Student extends Person implements Comparable<Student> {
 
       private int id;
 
+      /**
+       * Таблица студента
+       * @param name Имя
+       * @param age Возраст
+       * @param id Индивидуальный номер
+       */
       public Student(String name, int age, int id) {
             super(name, age);
             this.id = id;
