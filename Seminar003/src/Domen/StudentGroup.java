@@ -3,7 +3,7 @@ package Domen;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup> {
       private List<Student> group;
       private Integer idGroup;
 
@@ -59,6 +59,17 @@ public class StudentGroup implements Iterable<Student> {
 
             };
 
+      }
+
+      @Override
+      public int compareTo(StudentGroup o) {
+
+            if (this.getGroup().size() == o.getGroup().size()) 
+                  return 0;
+            if (this.getGroup().size() > o.getGroup().size())
+                  return 1;
+            else
+                  return -1;
       }
 
 }
