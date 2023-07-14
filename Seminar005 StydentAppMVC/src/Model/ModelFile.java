@@ -12,6 +12,11 @@ import Controller.iGetModel;
 public class ModelFile implements iGetModel {
       private String fileName;
 
+      /**
+       * Конструктор создающий физический файл на носителе
+       * 
+       * @param fileName - название файла и его разрешение
+       */
       public ModelFile(String fileName) {
             this.fileName = fileName;
 
@@ -32,7 +37,7 @@ public class ModelFile implements iGetModel {
                   String line = reader.readLine();
                   while (line != null) {
                         String[] param = line.split(" ");
-                        Student pers = new Student(param[0], Integer.parseInt(param[1]), Integer.parseInt(param[2]));
+                        Student pers = new Student(param[0], Integer.parseInt(param[1]), Long.parseLong(param[2]));
                         students.add(pers);
                         line = reader.readLine();
                   }
@@ -44,6 +49,10 @@ public class ModelFile implements iGetModel {
             return students;
       }
 
+      /**
+       * Метод проводящий запись в отдельный файл данных.
+       * @param students - принимаемая коллекция данных
+       */
       public void saveAllStudentToFile(List<Student> students) {
             try (FileWriter fw = new FileWriter(fileName, true)) {
                   for (Student pers : students) {
@@ -54,6 +63,18 @@ public class ModelFile implements iGetModel {
             } catch (Exception e) {
                   System.out.println(e.getMessage());
             }
+      }
+
+      @Override
+      public void printHashStud() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'printHashStud'");
+      }
+
+      @Override
+      public void removeStudents(Long id) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'removeStudents'");
       }
 
 }

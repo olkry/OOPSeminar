@@ -2,7 +2,7 @@ package Model;
 
 public class Student extends Person implements Comparable<Student> {
 
-      private int id;
+      private long id;
 
       /**
        * Таблица студента
@@ -10,17 +10,17 @@ public class Student extends Person implements Comparable<Student> {
        * @param age Возраст
        * @param id Индивидуальный номер
        */
-      public Student(String name, int age, int id) {
+      public Student(String name, int age, long id) {
             super(name, age);
             this.id = id;
       }
 
-      public int getId() {
+      public Long getId() {
             return id;
       }
 
 
-      public void setId(int id) {
+      public void setId(Long id) {
             this.id = id;
       }
 

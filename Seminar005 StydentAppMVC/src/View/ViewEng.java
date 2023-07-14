@@ -6,11 +6,12 @@ import java.util.Scanner;
 import Controller.iGetView;
 import Model.Student;
 
-// Класс создающий визуальный интерфейс программы на русском
-public class View implements iGetView {
-      
-      public void printAllStudent(List<Student> students){
-            System.out.println("----------Список студентов----------");
+// Класс создающий визуальный интерфейс программы на английском
+public class ViewEng implements iGetView {
+
+      @Override
+      public void printAllStudent(List<Student> students) {
+            System.out.println("----------Students list----------");
             for (Student student : students) {
                   System.out.println(student);
             }
@@ -47,4 +48,5 @@ public class View implements iGetView {
             // TODO Auto-generated method stub
             throw new UnsupportedOperationException("Unimplemented method 'getStudentIdToUpdate'");
       }
+      
 }

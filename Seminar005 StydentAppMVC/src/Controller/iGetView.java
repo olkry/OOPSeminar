@@ -4,6 +4,7 @@ import java.util.List;
 
 import Model.Student;
 
+// Интерфейс отвечающий за отображение в консоли
 public interface iGetView {
 
       
